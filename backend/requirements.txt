@@ -1,0 +1,31 @@
+# Backend Python Dependencies for Smart Video Learning Tool
+
+# Core FastAPI framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Environment variable management
+python-dotenv==1.0.0
+
+# External APIs
+openai==1.3.0
+youtube-transcript-api==0.6.2
+
+# Data validation and serialization
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# HTTP requests library
+requests==2.31.0
+
+# CORS support (included with fastapi, listed for clarity)
+python-multipart==0.0.6
+
+# Optional: Database support (to be added later)
+# sqlalchemy==2.0.0
+# alembic==1.12.0
+
+# Optional: Testing (to be added later)
+# pytest==7.4.0
+# pytest-asyncio==0.21.0
+# httpx==0.25.0

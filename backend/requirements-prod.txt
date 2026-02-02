@@ -1,0 +1,11 @@
+# Production Python dependencies for Gunicorn (Heroku-style deployments)
+# Run: pip install -r requirements-prod.txt
+
+# Include base requirements
+-r requirements.txt
+
+# Production server
+gunicorn==21.2.0
+
+# Production monitoring (optional)
+# sentry-sdk==1.38.0
