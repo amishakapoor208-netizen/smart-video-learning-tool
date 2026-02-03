@@ -22,6 +22,7 @@ import os
 
 # Import route modules
 from app.routes.transcript_routes import router as transcript_router
+from app.routes.video_routes import router as video_router
 
 # Load environment variables from .env file
 load_dotenv()
@@ -107,14 +108,17 @@ async def health():
 # Prefix "/api" makes the endpoint: POST /api/transcript/extract
 app.include_router(transcript_router, prefix="/api")
 
+# Include video processing routes
+# Prefix "/api" makes the endpoint: POST /api/video/process
+app.include_router(video_router, prefix="/api")
+
 # Routes available in next phases:
 # from app.routes import summary_routes, quiz_routes
 # app.include_router(summary_routes.router, prefix="/api")
 # app.include_router(quiz_routes.router, prefix="/api")
 
 # TODO:
-# - Add summary generation routes (Phase 4)
-# - Add quiz generation routes (Phase 5)
+# - Add advanced features for Phase 5+
 # - Setup error handling middleware
 # - Add request logging for monitoring
 # - Add rate limiting for production
