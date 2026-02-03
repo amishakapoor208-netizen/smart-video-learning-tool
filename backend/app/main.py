@@ -20,6 +20,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import os
 
+# Import route modules
+from app.routes.transcript_routes import router as transcript_router
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -100,13 +103,18 @@ async def health():
 
 
 # Routes will be imported here once implemented
-# from app.routes import video_routes, quiz_routes
-# app.include_router(video_routes.router)
-# app.include_router(quiz_routes.router)
+# Include transcript extraction routes
+# Prefix "/api" makes the endpoint: POST /api/transcript/extract
+app.include_router(transcript_router, prefix="/api")
+
+# Routes available in next phases:
+# from app.routes import summary_routes, quiz_routes
+# app.include_router(summary_routes.router, prefix="/api")
+# app.include_router(quiz_routes.router, prefix="/api")
 
 # TODO:
-# - Import route modules once they are created
-# - Add service layers for AI and transcript processing
+# - Add summary generation routes (Phase 4)
+# - Add quiz generation routes (Phase 5)
 # - Setup error handling middleware
 # - Add request logging for monitoring
 # - Add rate limiting for production
