@@ -1,27 +1,16 @@
-/**
- * App.jsx
- * Main root component of the React application
- * 
- * Purpose:
- * - Serves as the entry point for the entire React application
- * - Will be extended with routing and major UI components later
- * 
- * TODO:
- * - Add routing setup (React Router)
- * - Create page components
- * - Implement API integration with backend
- */
-
 import { useState } from 'react'
 import './App.css'
 import VideoProcessor from './pages/VideoProcessor'
 import Dashboard from './pages/Dashboard'
 
+console.log('App.jsx loaded')
+
 function App() {
   const [currentPage, setCurrentPage] = useState('processor')
+  console.log('App rendered, currentPage:', currentPage)
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Navigation */}
       <nav className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
